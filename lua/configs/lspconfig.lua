@@ -21,3 +21,19 @@ lspconfig.tsserver.setup {
   on_init = on_init,
   capabilities = capabilities,
 }
+
+-- python
+lspconfig.pyright.setup {
+  on_attach =on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {"python"}
+}
+lspconfig.ruff_lsp.setup {
+  init_options = {
+    setings = {
+      -- any extra CLI arguments for ruff go here
+      args = {}
+    }
+  }
+}

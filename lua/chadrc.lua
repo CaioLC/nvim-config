@@ -7,6 +7,5 @@ local M = {}
 M.ui = {
 	theme = "catppuccin",
 }
-M.mappings = require "configs.mymappings"
 
 return M

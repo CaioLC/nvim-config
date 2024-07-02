@@ -21,6 +21,9 @@ return {
   {
     "mfussenegger/nvim-dap",
     config = function () require("configs.lldb") end,
+    dependencies = {
+      "rcarriga/nvim-dap-ui",
+    }
     -- requires = {
     --   "Pocco81/DAPInstall.nvim",
     -- }
@@ -40,12 +43,6 @@ return {
       require("dapui")
       require("dap-python").setup()
     end,
-  },
-  -- diagnostics and formatters
-  {
-    "nvimtools/none-ls.nvim",
-    ft = {"python"},
-    config = function () require("configs.null_ls") end,
   },
   {
     "rcarriga/nvim-dap-ui",
@@ -67,6 +64,12 @@ return {
         dapui.close()
       end
     end
+  },
+  -- diagnostics and formatters
+  {
+    "nvimtools/none-ls.nvim",
+    ft = {"python"},
+    config = function () require("configs.null_ls") end,
   },
   -- LSP
   {

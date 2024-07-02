@@ -18,11 +18,15 @@ return {
   		},
   	},
   },
-  -- debugger
   {
     "mfussenegger/nvim-dap",
+    config = function () require("configs.lldb") end,
+    -- requires = {
+    --   "Pocco81/DAPInstall.nvim",
+    -- }
+  },
+  {
     "nvim-neotest/nvim-nio",
-    -- "theHamsta/nvim-dap-virtual-text",
   },
   {
     "mfussenegger/nvim-dap-python",

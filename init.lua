@@ -27,6 +27,7 @@ require("lazy").setup({
 
   { import = "plugins" },
 }, lazy_config)
+vim.api.nvim_set_option("clipboard", "unnamedplus")
 
 -- load theme
 dofile(vim.g.base46_cache .. "defaults")

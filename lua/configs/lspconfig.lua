@@ -1,4 +1,3 @@
--- EXAMPLE 
 local on_attach = require("nvchad.configs.lspconfig").on_attach
 local on_init = require("nvchad.configs.lspconfig").on_init
 local capabilities = require("nvchad.configs.lspconfig").capabilities
@@ -27,9 +26,23 @@ lspconfig.pyright.setup {
   on_attach =on_attach,
   on_init = on_init,
   capabilities = capabilities,
-  filetypes = {"python"}
+  filetypes = {"python"},
+  settings = {
+    pyright = {
+      disableOrganizeImports = true,
+    },
+    python = {
+      analysis = {
+        ignore = { '*' },
+      },
+    },
+  },
 }
 lspconfig.ruff_lsp.setup {
+  on_attach =on_attach,
+  on_init = on_init,
+  capabilities = capabilities,
+  filetypes = {"python"},
   init_options = {
     setings = {
       -- any extra CLI arguments for ruff go here
@@ -37,3 +50,7 @@ lspconfig.ruff_lsp.setup {
     }
   }
 }
+
+-- zig
+lspconfig.zls.setup {}
+

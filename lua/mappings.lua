@@ -7,9 +7,14 @@ local map = vim.keymap.set
 map("n", ";", ":", { desc = "CMD enter command mode" })
 map("i", "jk", "<ESC>")
 
--- map({ "n", "i", "v" }, "<C-s>", "<cmd> w <cr>")
+-- LSP
+vim.keymap.set('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', { desc = "go to definition"})
+vim.keymap.set('n', 'gp', '<cmd>lua vim.lsp.buf.hover()<CR>', { desc = "peak definition"})
+
+-- DAP
 vim.keymap.set('n', '<Leader>dr', function() require('dapui').open({reset = true}) end, { desc = "reset ui"})
 vim.keymap.set('n', '<F5>', function() require('dap').continue() end, { desc = "continue"})
+vim.keymap.set('n', '<Leader>dr', function() require('dap').continue() end, { desc = "run | continue"})
 vim.keymap.set('n', '<F10>', function() require('dap').step_over() end, { desc = "step_over"})
 vim.keymap.set('n', '<F11>', function() require('dap').step_into() end, { desc = "step_into"})
 vim.keymap.set('n', '<F12>', function() require('dap').step_out() end, { desc = "step_out"})
